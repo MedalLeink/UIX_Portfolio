@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { toast } from "@/hooks/use-toast";
+import { toast } from "./../hooks/use-toast";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -180,7 +180,7 @@ const Contact = () => {
         {/* Footer */}
         <div className="text-center mt-16 pt-8 border-t border-purple-500/20">
           <p className="text-gray-300">
-            © 2024 Alex Portfolio. Designed & Developed with ❤️
+            © 2025 Madeleine Nkiru's Portfolio. Designed & Developed with so much ❤️
           </p>
         </div>
       </div>
