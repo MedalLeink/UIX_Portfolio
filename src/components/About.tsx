@@ -9,7 +9,7 @@ const About = () => {
             </h2>
             
             <p className="text-gray-300 text-lg leading-relaxed">
-              I'm a passionate designer with over 5 years of experience creating digital experiences that matter. My work bridges the gap between beautiful aesthetics and functional design.
+              I'm a passionate designer with 3 years of experience creating digital experiences that matter. My work bridges the gap between beautiful aesthetics and functional design.
             </p>
             
             <p className="text-gray-300 text-lg leading-relaxed">
@@ -18,12 +18,12 @@ const About = () => {
             
             <div className="grid grid-cols-2 gap-6 mt-8">
               <div className="text-center p-6 rounded-lg bg-slate-800/50 backdrop-blur-sm border border-purple-500/20">
-                <div className="text-3xl font-bold text-purple-400 mb-2">50+</div>
+                <div className="text-3xl font-bold text-purple-400 mb-2">30+</div>
                 <div className="text-gray-300">Projects Completed</div>
               </div>
               
               <div className="text-center p-6 rounded-lg bg-slate-800/50 backdrop-blur-sm border border-purple-500/20">
-                <div className="text-3xl font-bold text-purple-400 mb-2">5+</div>
+                <div className="text-3xl font-bold text-purple-400 mb-2">3+</div>
                 <div className="text-gray-300">Years Experience</div>
               </div>
             </div>

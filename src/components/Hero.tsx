@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 const Hero = () => {
   const [displayText, setDisplayText] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
-  const titles = ["Creative Designer", "UX/UI Specialist", "Digital Artist", "Problem Solver"];
+  const titles = ["Product Designer ", "UI/UX Specialist ", "Design Systems Expert ", "User Advocate "];
   const [titleIndex, setTitleIndex] = useState(0);
 
   useEffect(() => {
@@ -30,7 +30,7 @@ const Hero = () => {
       <div className="text-center max-w-4xl mx-auto">
         <div className="animate-fade-in">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white via-purple-300 to-pink-300 bg-clip-text text-transparent">
-            Hello, I'm Alex
+            Hello, I'm Madeleine
           </h1>
           
           <div className="h-16 mb-8">
