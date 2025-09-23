@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 const Hero = () => {
   const [displayText, setDisplayText] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
-  const titles = ["Product Designer", "UX/UI Specialist", "Design Systems Expert", "User Advocate"];
+  const titles = ["Creative Designer", "UX/UI Specialist", "Digital Artist", "Problem Solver"];
   const [titleIndex, setTitleIndex] = useState(0);
 
   useEffect(() => {
@@ -13,71 +13,58 @@ const Hero = () => {
       const timeout = setTimeout(() => {
         setDisplayText(currentTitle.slice(0, currentIndex + 1));
         setCurrentIndex(currentIndex + 1);
-      }, 80);
+      }, 100);
       return () => clearTimeout(timeout);
     } else {
       const timeout = setTimeout(() => {
         setCurrentIndex(0);
         setDisplayText("");
         setTitleIndex((titleIndex + 1) % titles.length);
-      }, 2500);
+      }, 2000);
       return () => clearTimeout(timeout);
     }
   }, [currentIndex, titleIndex, titles]);
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center px-6 pt-20">
+    <section id="home" className="min-h-screen flex items-center justify-center px-6 pt-20">
       <div className="text-center max-w-4xl mx-auto">
-        <div className="smooth-enter">
-          {/* Clean, Professional Header */}
-          <div className="mb-12">
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 gradient-text leading-tight">
-              Hello, I'm Alex
-            </h1>
-            <div className="h-16 mb-8 flex items-center justify-center">
-              <h2 className="text-2xl md:text-4xl font-light text-muted-foreground">
-                <span className="accent-text">{displayText}</span>
-                <span className="animate-blink text-primary ml-1">|</span>
-              </h2>
-            </div>
+        <div className="animate-fade-in">
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white via-purple-300 to-pink-300 bg-clip-text text-transparent">
+            Hello, I'm Alex
+          </h1>
+          
+          <div className="h-16 mb-8">
+            <h2 className="text-2xl md:text-4xl font-light text-purple-300">
+              {displayText}
+              <span className="animate-pulse">|</span>
+            </h2>
           </div>
           
-          {/* Professional Description */}
-          <p className="text-lg md:text-xl text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed">
-            I craft intuitive digital experiences that solve complex problems through 
-            <span className="text-primary font-medium"> thoughtful design</span> and 
-            <span className="text-accent font-medium"> user-centered thinking</span>.
+          <p className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto leading-relaxed">
+            I create beautiful, functional designs that solve real problems and deliver exceptional user experiences.
           </p>
           
-          {/* Clean CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="#projects"
-              className="btn-primary hover-lift"
+              className="px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-full font-semibold hover:from-purple-700 hover:to-pink-700 transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-purple-500/25"
             >
               View My Work
             </a>
             
             <a
               href="#contact"
-              className="btn-outline hover-lift"
+              className="px-8 py-4 border-2 border-purple-500 text-purple-300 rounded-full font-semibold hover:bg-purple-500 hover:text-white transition-all duration-300 transform hover:scale-105"
             >
-              Let's Connect
+              Get In Touch
             </a>
           </div>
         </div>
         
-        {/* Subtle Decorative Elements */}
-        <div className="absolute top-1/4 left-8 w-2 h-2 bg-primary rounded-full opacity-60 animate-pulse"></div>
-        <div className="absolute top-1/3 right-8 w-1.5 h-1.5 bg-accent rounded-full opacity-50 animate-pulse" style={{ animationDelay: '1s' }}></div>
-        <div className="absolute bottom-1/3 left-1/4 w-1 h-1 bg-primary/60 rounded-full opacity-40 animate-pulse" style={{ animationDelay: '2s' }}></div>
-      </div>
-
-      {/* Minimal Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-border rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-primary rounded-full mt-2 animate-pulse"></div>
-        </div>
+        {/* Floating Elements */}
+        <div className="absolute top-1/4 left-10 w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full opacity-20 animate-pulse"></div>
+        <div className="absolute top-1/3 right-10 w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full opacity-30 animate-pulse delay-1000"></div>
+        <div className="absolute bottom-1/4 left-1/4 w-8 h-8 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full opacity-25 animate-pulse delay-500"></div>
       </div>
     </section>
   );

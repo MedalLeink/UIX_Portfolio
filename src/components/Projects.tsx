@@ -61,104 +61,79 @@ const Projects = () => {
     : projects.filter(project => project.category === activeFilter);
 
   return (
-    <section id="projects" className="py-24 px-6">
-      <div className="container mx-auto max-w-6xl">
-        {/* Clean Header */}
-        <div className="text-center mb-16">
-          <div className="inline-block mb-4">
-            <span className="text-sm font-medium text-primary uppercase tracking-wider">Portfolio</span>
-          </div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 gradient-text">
+    <section id="projects" className="py-20 px-6">
+      <div className="container mx-auto max-w-7xl">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
             Featured Projects
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed">
-            Selected work showcasing my approach to solving complex design challenges through 
-            <span className="text-primary font-medium"> strategic thinking</span> and 
-            <span className="text-accent font-medium"> user-focused solutions</span>.
+          <p className="text-gray-300 text-xl max-w-2xl mx-auto">
+            Here's a selection of my recent work across different platforms and industries.
           </p>
         </div>
 
-        {/* Clean Filter Buttons */}
-        <div className="flex flex-wrap justify-center gap-3 mb-12">
-          {categories.map((category, index) => (
+        {/* Filter Buttons */}
+        <div className="flex flex-wrap justify-center gap-4 mb-12">
+          {categories.map((category) => (
             <button
               key={category}
               onClick={() => setActiveFilter(category)}
-              className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 hover-lift ${
+              className={`px-6 py-3 rounded-full transition-all duration-300 ${
                 activeFilter === category
-                  ? "bg-primary text-primary-foreground shadow-md"
-                  : "bg-muted text-muted-foreground hover:bg-muted/80 hover:text-foreground"
+                  ? "bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-lg"
+                  : "bg-slate-800/50 text-gray-300 hover:bg-slate-700/50 border border-purple-500/20"
               }`}
-              style={{ animationDelay: `${index * 100}ms` }}
             >
               {category}
             </button>
           ))}
         </div>
 
-        {/* Clean Projects Grid */}
+        {/* Projects Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProjects.map((project, index) => (
             <div
               key={project.id}
-              className="group clean-card hover-lift smooth-enter"
-              style={{ animationDelay: `${index * 150}ms` }}
+              className="group relative bg-slate-800/50 rounded-2xl overflow-hidden backdrop-blur-sm border border-purple-500/20 hover:border-purple-500/40 transition-all duration-500 hover:transform hover:scale-105"
+              style={{ animationDelay: `${index * 100}ms` }}
             >
-              {/* Image Container */}
-              <div className="relative overflow-hidden rounded-lg mb-6">
+              <div className="relative overflow-hidden">
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
               
-              {/* Content */}
-              <div className="space-y-4">
-                {/* Tags */}
-                <div className="flex flex-wrap gap-2">
+              <div className="p-6">
+                <div className="flex flex-wrap gap-2 mb-3">
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="px-3 py-1 text-xs font-medium bg-muted text-muted-foreground rounded-md"
+                      className="px-3 py-1 text-xs bg-purple-600/20 text-purple-300 rounded-full"
                     >
                       {tag}
                     </span>
                   ))}
                 </div>
                 
-                <h3 className="text-xl font-semibold text-foreground group-hover:text-primary transition-colors duration-300">
+                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-purple-300 transition-colors">
                   {project.title}
                 </h3>
                 
-                <p className="text-muted-foreground text-sm leading-relaxed">
+                <p className="text-gray-400 text-sm leading-relaxed">
                   {project.description}
                 </p>
                 
-                {/* CTA */}
-                <div className="pt-2">
-                  <button className="flex items-center gap-2 text-primary hover:text-accent font-medium text-sm transition-colors">
-                    <span>View Case Study</span>
-                    <span className="transform group-hover:translate-x-1 transition-transform">→</span>
+                <div className="mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <button className="text-purple-400 hover:text-purple-300 font-semibold text-sm">
+                    View Project →
                   </button>
                 </div>
               </div>
             </div>
           ))}
-        </div>
-
-        {/* CTA Section */}
-        <div className="text-center mt-16">
-          <p className="text-muted-foreground mb-6 text-lg">
-            Interested in working together?
-          </p>
-          <a
-            href="#contact"
-            className="btn-primary hover-lift inline-block"
-          >
-            Let's Discuss Your Project
-          </a>
         </div>
       </div>
     </section>
