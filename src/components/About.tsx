@@ -33,7 +33,7 @@ const About = () => {
             <div className="w-full h-96 bg-gradient-to-br from-purple-600/20 to-pink-600/20 rounded-2xl backdrop-blur-sm border border-purple-500/30 flex items-center justify-center">
               <div className="text-center">
                 <div className="w-32 h-32 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full mx-auto mb-4 flex items-center justify-center">
-                  <span className="text-4xl font-bold text-white">A</span>
+                  <span className="text-4xl font-bold text-white"><img src="./../src/assets/Profile_Pic.jpeg" alt="" /></span>
                 </div>
                 <p className="text-gray-300">Professional Designer</p>
               </div>

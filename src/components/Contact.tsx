@@ -50,7 +50,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="text-white font-semibold">Email</p>
-                    <p className="text-gray-300">alex@portfolio.com</p>
+                    <p className="text-gray-300">anaghamadeleine@gmail.com</p>
                   </div>
                 </div>
                 
@@ -60,7 +60,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="text-white font-semibold">Phone</p>
-                    <p className="text-gray-300">+1 (555) 123-4567</p>
+                    <p className="text-gray-300">+234 906 4643 677</p>
                   </div>
                 </div>
                 
@@ -70,7 +70,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="text-white font-semibold">Location</p>
-                    <p className="text-gray-300">San Francisco, CA</p>
+                    <p className="text-gray-300">Lagos, Nigeria.</p>
                   </div>
                 </div>
               </div>
@@ -81,7 +81,7 @@ const Contact = () => {
               <h4 className="text-xl font-bold text-white mb-4">Follow Me</h4>
               <div className="flex space-x-4">
                 {[
-                  { name: "LinkedIn", url: "#" },
+                  { name: "LinkedIn", url: "https://www.linkedin.com/in/anagha-madeleine" },
                   { name: "Dribbble", url: "#" },
                   { name: "Behance", url: "#" },
                   { name: "Twitter", url: "#" }
