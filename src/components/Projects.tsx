@@ -23,7 +23,7 @@ const Projects = () => {
       description:
         "A seamless blend of classic heritage and contemporary style, curated to elevate your fashion for formal gatherings and cultural celebrations.",
       image:
-        "/Pick'n'Get.png",
+        "/Glamorix.png",
       tags: ["Fashion", "E-Commerce", "UI/UX"],
       link: "https://tinyurl.com/Glamorixx",
     },
