@@ -1,5 +1,5 @@
 import { useState, useRef } from "react";
-import emailjs from "emailjs-com";
+import emailjs from "@emailjs/browser";
 import { toast } from "./../hooks/use-toast";
 
 const Contact = () => {
@@ -10,43 +10,46 @@ const Contact = () => {
     message: "",
   });
 
-  const formRef = useRef<HTMLFormElement>(null);
+  const formRef = useRef(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (!formRef.current) return;
 
-    emailjs
-      .sendForm(
-        "service_65tuzdc", // e.g. "service_xxxxx"
-        "template_v7q68yp", // e.g. "template_yyyyy"
+    console.log("Submitting form...");
+
+    try {
+      const result = await emailjs.sendForm(
+        "service_65tuzdc", // 🔹 Your EmailJS service ID
+        "template_5qzcman", // 🔹 Your EmailJS template ID
         formRef.current,
-        "4l-B5pZ6B-FULxxgo" // e.g. "abc123xyz"
-      )
-      .then(
-        (result) => {
-          console.log("Email sent:", result.text);
-          toast({
-            title: "Message Sent! 📩",
-            description:
-              "Thank you for your message. I'll get back to you soon!",
-          });
-          setFormData({ name: "", email: "", subject: "", message: "" });
-        },
-        (error) => {
-          console.error("Email error:", error.text);
-          toast({
-            title: "Something went wrong 😢",
-            description: "Please try again later or check your connection.",
-          });
-        }
+        "4l-B5pZ6B-FULxxgo" // 🔹 Your EmailJS public key
       );
+
+      console.log("Email sent:", result.text);
+
+      toast({
+        title: "Message Sent! 📩",
+        description:
+          "Thank you for your message. I’ll get back to you as soon as possible.",
+      });
+
+      // Reset form
+      setFormData({ name: "", email: "", subject: "", message: "" });
+      formRef.current.reset();
+    } catch (error) {
+      console.error("Email send error:", error);
+
+      toast({
+        title: "Something went wrong 😢",
+        description:
+          "Please try again later or check your internet connection.",
+      });
+    }
   };
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
+  const handleChange = (e) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
@@ -56,12 +59,13 @@ const Contact = () => {
   return (
     <section id="contact" className="py-20 px-6">
       <div className="container mx-auto max-w-4xl">
+        {/* Header */}
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-            Let's Work Together
+            Let’s Work Together
           </h2>
           <p className="text-gray-300 text-xl max-w-2xl mx-auto">
-            Ready to bring your ideas to life? Let's discuss your next project
+            Ready to bring your ideas to life? Let’s discuss your next project
             and create something amazing together.
           </p>
         </div>
@@ -98,7 +102,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="text-white font-semibold">Location</p>
-                    <p className="text-gray-300">Lagos, Nigeria.</p>
+                    <p className="text-gray-300">Lagos, Nigeria</p>
                   </div>
                 </div>
               </div>
@@ -117,7 +121,9 @@ const Contact = () => {
                   <a
                     key={social.name}
                     href={social.url}
-                    className="w-12 h-12 bg-slate-800/50 border border-purple-500/20 rounded-full flex items-center justify-center text-gray-300 hover:bg-gradient-to-r hover:from-purple-600 hover:to-pink-600 hover:text-white transition-all duration-300 hover:transform hover:scale-110"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="w-12 h-12 bg-slate-800/50 border border-purple-500/20 rounded-full flex items-center justify-center text-gray-300 hover:bg-gradient-to-r hover:from-purple-600 hover:to-pink-600 hover:text-white transition-all duration-300 transform hover:scale-110"
                   >
                     {social.name.charAt(0)}
                   </a>
@@ -131,10 +137,7 @@ const Contact = () => {
             <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
-                  <label
-                    htmlFor="name"
-                    className="block text-white font-semibold mb-2"
-                  >
+                  <label htmlFor="name" className="block text-white font-semibold mb-2">
                     Name
                   </label>
                   <input
@@ -150,10 +153,7 @@ const Contact = () => {
                 </div>
 
                 <div>
-                  <label
-                    htmlFor="email"
-                    className="block text-white font-semibold mb-2"
-                  >
+                  <label htmlFor="email" className="block text-white font-semibold mb-2">
                     Email
                   </label>
                   <input
@@ -170,10 +170,7 @@ const Contact = () => {
               </div>
 
               <div>
-                <label
-                  htmlFor="subject"
-                  className="block text-white font-semibold mb-2"
-                >
+                <label htmlFor="subject" className="block text-white font-semibold mb-2">
                   Subject
                 </label>
                 <input
@@ -189,10 +186,7 @@ const Contact = () => {
               </div>
 
               <div>
-                <label
-                  htmlFor="message"
-                  className="block text-white font-semibold mb-2"
-                >
+                <label htmlFor="message" className="block text-white font-semibold mb-2">
                   Message
                 </label>
                 <textarea
@@ -220,7 +214,7 @@ const Contact = () => {
         {/* Footer */}
         <div className="text-center mt-16 pt-8 border-t border-purple-500/20">
           <p className="text-gray-300">
-            © 2025 Madeleine Nkiru. Designed & Developed with so much ❤️
+            © 2025 Madeleine Nkiru. Designed & Developed with ❤️
           </p>
         </div>
       </div>
