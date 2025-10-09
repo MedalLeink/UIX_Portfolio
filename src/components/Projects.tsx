@@ -66,7 +66,7 @@ const Projects = () => {
       description:
         "A stunning clone of Lemmelive.com reimagined as a sleek social web app — designed for seamless creator interaction, live engagement, and authentic community experiences.",
       image:
-        "https://images.unsplash.com/photo-1473091534298-04dcbce3278c?w=800&h=600&fit=crop",
+        "/Lemme.png",
       tags: ["Web", "Social", "Live Interaction"],
       link: "https://tinyurl.com/lemmeClone",
     },
