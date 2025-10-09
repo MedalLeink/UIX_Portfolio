@@ -11,7 +11,7 @@ const Projects = () => {
       description:
         "A Web3-powered recycling and waste management platform built to transform how individuals and communities handle waste while earning rewards.",
       image:
-        "/src/assets/Pick'n'Get.png",
+        "/Pick'n'Get.png",
       tags: ["UI/UX", "React", "Web3"],
       link: "https://tinyurl.com/PickGett",
     },
