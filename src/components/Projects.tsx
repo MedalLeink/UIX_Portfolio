@@ -70,13 +70,10 @@ const Projects = () => {
 
   // Updated filter logic for multiple categories
   const filteredProjects =
-    activeFilter === "All"
-      ? projects
-      : projects.filter(
-          (p) =>
-            p.categories?.includes(activeFilter) ||
-            p.category === activeFilter
-        );
+  activeFilter === "All"
+    ? projects
+    : projects.filter((p) => p.categories.includes(activeFilter));
+
 
   return (
     <section id="projects" className="py-20 px-6">
