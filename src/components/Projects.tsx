@@ -6,69 +6,70 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: "E-Commerce Platform",
+      title: "Pick ’n’ Get (Recycling DApp)",
       category: "Web Design",
       description:
-        "Modern e-commerce platform with seamless user experience and conversion-focused design.",
+        "A Web3-powered recycling and waste management platform built to transform how individuals and communities handle waste while earning rewards.",
       image:
         "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
-      tags: ["UI/UX", "React", "Tailwind"],
-      link: "https://tinyurl.com/PickGett", // 👈 external link
+      tags: ["UI/UX", "React", "Web3"],
+      link: "https://tinyurl.com/PickGett",
     },
+
     {
       id: 2,
-      title: "Mobile Banking App",
-      category: "Mobile",
+      title: "Glamorix Web App",
+      category: "Web Design",
       description:
-        "Intuitive banking app focusing on security, accessibility, and user-friendly interface.",
+        "A seamless blend of classic heritage and contemporary style, curated to elevate your fashion for formal gatherings and cultural celebrations.",
       image:
         "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&h=600&fit=crop",
-      tags: ["Mobile", "FinTech", "UX"],
-      link: "https://banking-app.example.com",
+      tags: ["Fashion", "E-Commerce", "UI/UX"],
+      link: "https://tinyurl.com/Glamorixx",
     },
     {
       id: 3,
-      title: "Brand Identity Design",
-      category: "Branding",
+      title: "FLUD App",
+      category: "Mobile",
       description:
-        "Complete brand identity system including logo, color palette, and brand guidelines.",
+        "On-Demand Fuel and Car Services at Your Fingertips — a modern mobile solution designed to deliver fuel, car maintenance, and emergency services whenever and wherever you need them.",
       image:
-        "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=800&h=600&fit=crop",
-      tags: ["Branding", "Logo", "Identity"],
-      link: "https://behance.net/brand-identity",
+        "https://images.unsplash.com/photo-1502877338535-766e1452684a?w=800&h=600&fit=crop",
+      tags: ["On-Demand", "Mobile", "AutoTech"],
+      link: "https://tinyurl.com/5bacvxem", // 👈 external link to the FLUD app
     },
     {
       id: 4,
-      title: "Dashboard Analytics",
-      category: "Web Design",
+      title: "YoShop",
+      category: "E-Commerce",
       description:
-        "Complex data visualization dashboard with clean design and intuitive user interactions.",
+        "A modern online grocery shopping platform designed for convenience — offering users a seamless way to browse, order, and get essentials delivered straight to their doorsteps.",
       image:
-        "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=600&fit=crop",
-      tags: ["Dashboard", "Analytics", "Data Viz"],
-      link: "https://dribbble.com/dashboard-analytics",
+        "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=800&h=600&fit=crop",
+      tags: ["E-Commerce", "Grocery", "Delivery"],
+      link: "https://tinyurl.com/YoShhop",
     },
     {
       id: 5,
-      title: "Creative Portfolio",
-      category: "Web Design",
+      title: "Ticket City",
+      category: "Web3 App",
       description:
-        "Personal portfolio website showcasing creative work with smooth animations.",
+        "Blockchain-powered event ticketing platform ensuring transparent, tamper-proof, and secure digital ticketing for concerts, festivals, and shows.",
       image:
         "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=800&h=600&fit=crop",
-      tags: ["Portfolio", "Creative", "Animation"],
-      link: "https://portfolio.example.com",
+      tags: ["Web3", "Blockchain", "Ticketing"],
+      link: "https://tinyurl.com/42brwuuk",
     },
     {
       id: 6,
-      title: "Food Delivery App",
-      category: "Mobile",
+      title: "Lemme",
+      category: "Web App",
       description:
-        "User-friendly food delivery app with location services and real-time tracking.",
+        "A stunning clone of Lemmelive.com reimagined as a sleek social web app — designed for seamless creator interaction, live engagement, and authentic community experiences.",
       image:
         "https://images.unsplash.com/photo-1473091534298-04dcbce3278c?w=800&h=600&fit=crop",
-      tags: ["Mobile", "Food", "Delivery"],
-      link: "https://play.google.com/store/apps/details?id=fooddelivery",
+      tags: ["Web", "Social", "Live Interaction"],
+      link: "https://tinyurl.com/lemmeClone",
     },
   ];
 

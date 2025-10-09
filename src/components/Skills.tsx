@@ -4,7 +4,7 @@ const Skills = () => {
       title: "Design Tools",
       skills: [
         { name: "Figma", level: 95 },
-        { name: "Adobe Creative Suite", level: 90 },
+        // { name: "Adobe Creative Suite", level: 90 },
         { name: "Sketch", level: 85 },
         { name: "Framer", level: 80 }
       ]
@@ -81,8 +81,10 @@ const Skills = () => {
           <h3 className="text-2xl font-bold text-center text-white mb-8">Technologies I Work With</h3>
           <div className="flex flex-wrap justify-center gap-6">
             {[
-              "React", "Vue", "Node.js", "Python", "MongoDB", "PostgreSQL", 
-              "AWS", "Docker", "Git", "TypeScript", "GraphQL", "Firebase"
+              // "React", "Vue", "Node.js", "Python", "MongoDB", "PostgreSQL", 
+              // "AWS", "Docker", "Git", "TypeScript", "GraphQL", "Firebase"
+              "React", "Node.js", "Python", "MongoDB", "PostgreSQL", 
+              "Docker", "Git", "TypeScript", "GraphQL", "Github"
             ].map((tech, index) => (
               <div
                 key={tech}
