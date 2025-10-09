@@ -55,7 +55,7 @@ const Projects = () => {
       category: "Web3 App",
       description:
         "Blockchain-powered event ticketing platform ensuring transparent, tamper-proof, and secure digital ticketing for concerts, festivals, and shows.",
-      image: "/src/assets/ticketcity.png",
+      image: "/TicketCity.png",
       tags: ["Web3", "Blockchain", "Ticketing"],
       link: "https://tinyurl.com/42brwuuk",
     },
