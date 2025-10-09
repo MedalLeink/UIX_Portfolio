@@ -7,52 +7,47 @@ const Projects = () => {
     {
       id: 1,
       title: "Pick ’n’ Get (Recycling DApp)",
-      category: "Web Design",
+      categories: ["Web Design", "Web3"], // belongs to both
       description:
         "A Web3-powered recycling and waste management platform built to transform how individuals and communities handle waste while earning rewards.",
-      image:
-        "/Pick'n'Get.png",
+      image: "/Pick'n'Get.png",
       tags: ["UI/UX", "React", "Web3"],
       link: "https://tinyurl.com/PickGett",
     },
-
     {
       id: 2,
-      title: "Glamorix Web App",
-      category: "Web Design",
+      title: "Glamorix",
+      categories: ["Web Design", "Branding"], // also branding
       description:
         "A seamless blend of classic heritage and contemporary style, curated to elevate your fashion for formal gatherings and cultural celebrations.",
-      image:
-        "/Glamorix.png",
+      image: "/Glamorix.png",
       tags: ["Fashion", "E-Commerce", "UI/UX"],
       link: "https://tinyurl.com/Glamorixx",
     },
     {
       id: 3,
       title: "FLUD App",
-      category: "Mobile",
+      categories: ["Mobile"], // only mobile
       description:
         "On-Demand Fuel and Car Services at Your Fingertips — a modern mobile solution designed to deliver fuel, car maintenance, and emergency services whenever and wherever you need them.",
-      image:
-        "/FLUD.png",
+      image: "/FLUD.png",
       tags: ["On-Demand", "Mobile", "AutoTech"],
-      link: "https://tinyurl.com/5bacvxem", // 👈 external link to the FLUD app
+      link: "https://tinyurl.com/5bacvxem",
     },
     {
       id: 4,
       title: "YoShop",
-      category: "E-Commerce",
+      categories: ["Mobile"], // branding focused
       description:
         "A modern online grocery shopping platform designed for convenience — offering users a seamless way to browse, order, and get essentials delivered straight to their doorsteps.",
-      image:
-        "/YoShop.png",
+      image: "/YoShop.png",
       tags: ["E-Commerce", "Grocery", "Delivery"],
       link: "https://tinyurl.com/YoShhop",
     },
     {
       id: 5,
       title: "Ticket City",
-      category: "Web3 App",
+      categories: ["Web Design", "Web3"], // web3 + design
       description:
         "Blockchain-powered event ticketing platform ensuring transparent, tamper-proof, and secure digital ticketing for concerts, festivals, and shows.",
       image: "/TicketCity.png",
@@ -62,21 +57,26 @@ const Projects = () => {
     {
       id: 6,
       title: "Lemme",
-      category: "Web App",
+      categories: ["Web Design"], // web + mobile
       description:
         "A stunning clone of Lemmelive.com reimagined as a sleek social web app — designed for seamless creator interaction, live engagement, and authentic community experiences.",
-      image:
-        "/Lemme.png",
+      image: "/Lemme.png",
       tags: ["Web", "Social", "Live Interaction"],
       link: "https://tinyurl.com/lemmeClone",
     },
   ];
 
-  const categories = ["All", "Web Design", "Mobile", "Branding"];
+  const categories = ["All", "Web Design", "Mobile", "Branding", "Web3"];
+
+  // Updated filter logic for multiple categories
   const filteredProjects =
     activeFilter === "All"
       ? projects
-      : projects.filter((p) => p.category === activeFilter);
+      : projects.filter(
+          (p) =>
+            p.categories?.includes(activeFilter) ||
+            p.category === activeFilter
+        );
 
   return (
     <section id="projects" className="py-20 px-6">
@@ -86,8 +86,7 @@ const Projects = () => {
             Featured Projects
           </h2>
           <p className="text-gray-300 text-xl max-w-2xl mx-auto">
-            Here's a selection of my recent work across different platforms and
-            industries.
+            Here's a selection of my recent work across different platforms and industries.
           </p>
         </div>
 
