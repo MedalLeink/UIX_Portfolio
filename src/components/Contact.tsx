@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
+import emailjs from "emailjs-com";
 import { toast } from "./../hooks/use-toast";
 
 const Contact = () => {
@@ -6,23 +7,49 @@ const Contact = () => {
     name: "",
     email: "",
     subject: "",
-    message: ""
+    message: "",
   });
+
+  const formRef = useRef<HTMLFormElement>(null);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Here you would typically send the form data to your backend
-    toast({
-      title: "Message Sent!",
-      description: "Thank you for your message. I'll get back to you soon!",
-    });
-    setFormData({ name: "", email: "", subject: "", message: "" });
+
+    if (!formRef.current) return;
+
+    emailjs
+      .sendForm(
+        "service_65tuzdc", // e.g. "service_xxxxx"
+        "template_v7q68yp", // e.g. "template_yyyyy"
+        formRef.current,
+        "4l-B5pZ6B-FULxxgo" // e.g. "abc123xyz"
+      )
+      .then(
+        (result) => {
+          console.log("Email sent:", result.text);
+          toast({
+            title: "Message Sent! 📩",
+            description:
+              "Thank you for your message. I'll get back to you soon!",
+          });
+          setFormData({ name: "", email: "", subject: "", message: "" });
+        },
+        (error) => {
+          console.error("Email error:", error.text);
+          toast({
+            title: "Something went wrong 😢",
+            description: "Please try again later or check your connection.",
+          });
+        }
+      );
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
@@ -34,7 +61,8 @@ const Contact = () => {
             Let's Work Together
           </h2>
           <p className="text-gray-300 text-xl max-w-2xl mx-auto">
-            Ready to bring your ideas to life? Let's discuss your next project and create something amazing together.
+            Ready to bring your ideas to life? Let's discuss your next project
+            and create something amazing together.
           </p>
         </div>
 
@@ -53,7 +81,7 @@ const Contact = () => {
                     <p className="text-gray-300">anaghamadeleine@gmail.com</p>
                   </div>
                 </div>
-                
+
                 <div className="flex items-center space-x-4">
                   <div className="w-12 h-12 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full flex items-center justify-center">
                     <span className="text-white font-bold">📱</span>
@@ -63,7 +91,7 @@ const Contact = () => {
                     <p className="text-gray-300">+234 906 4643 677</p>
                   </div>
                 </div>
-                
+
                 <div className="flex items-center space-x-4">
                   <div className="w-12 h-12 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full flex items-center justify-center">
                     <span className="text-white font-bold">📍</span>
@@ -84,7 +112,7 @@ const Contact = () => {
                   { name: "LinkedIn", url: "https://www.linkedin.com/in/anagha-madeleine" },
                   { name: "Dribbble", url: "#" },
                   { name: "Behance", url: "#" },
-                  { name: "Twitter", url: "#" }
+                  { name: "Twitter", url: "#" },
                 ].map((social) => (
                   <a
                     key={social.name}
@@ -100,10 +128,13 @@ const Contact = () => {
 
           {/* Contact Form */}
           <div className="bg-slate-800/50 backdrop-blur-sm border border-purple-500/20 rounded-2xl p-8">
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
-                  <label htmlFor="name" className="block text-white font-semibold mb-2">
+                  <label
+                    htmlFor="name"
+                    className="block text-white font-semibold mb-2"
+                  >
                     Name
                   </label>
                   <input
@@ -117,9 +148,12 @@ const Contact = () => {
                     placeholder="Your Name"
                   />
                 </div>
-                
+
                 <div>
-                  <label htmlFor="email" className="block text-white font-semibold mb-2">
+                  <label
+                    htmlFor="email"
+                    className="block text-white font-semibold mb-2"
+                  >
                     Email
                   </label>
                   <input
@@ -134,9 +168,12 @@ const Contact = () => {
                   />
                 </div>
               </div>
-              
+
               <div>
-                <label htmlFor="subject" className="block text-white font-semibold mb-2">
+                <label
+                  htmlFor="subject"
+                  className="block text-white font-semibold mb-2"
+                >
                   Subject
                 </label>
                 <input
@@ -150,9 +187,12 @@ const Contact = () => {
                   placeholder="Project Discussion"
                 />
               </div>
-              
+
               <div>
-                <label htmlFor="message" className="block text-white font-semibold mb-2">
+                <label
+                  htmlFor="message"
+                  className="block text-white font-semibold mb-2"
+                >
                   Message
                 </label>
                 <textarea
@@ -166,7 +206,7 @@ const Contact = () => {
                   placeholder="Tell me about your project..."
                 />
               </div>
-              
+
               <button
                 type="submit"
                 className="w-full px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg font-semibold hover:from-purple-700 hover:to-pink-700 transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-purple-500/25"
@@ -180,7 +220,7 @@ const Contact = () => {
         {/* Footer */}
         <div className="text-center mt-16 pt-8 border-t border-purple-500/20">
           <p className="text-gray-300">
-            © 2025 Madeleine Nkiru's Portfolio. Designed & Developed with so much ❤️
+            © 2025 Madeleine Nkiru. Designed & Developed with so much ❤️
           </p>
         </div>
       </div>
@@ -189,4 +229,3 @@ const Contact = () => {
 };
 
 export default Contact;
- 
