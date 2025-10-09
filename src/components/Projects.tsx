@@ -11,7 +11,7 @@ const Projects = () => {
       description:
         "A Web3-powered recycling and waste management platform built to transform how individuals and communities handle waste while earning rewards.",
       image:
-        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
+        "/src/assets/pick'n'get.png",
       tags: ["UI/UX", "React", "Web3"],
       link: "https://tinyurl.com/PickGett",
     },
@@ -45,7 +45,7 @@ const Projects = () => {
       description:
         "A modern online grocery shopping platform designed for convenience — offering users a seamless way to browse, order, and get essentials delivered straight to their doorsteps.",
       image:
-        "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=800&h=600&fit=crop",
+        "/src/assets/pick'n'get.png",
       tags: ["E-Commerce", "Grocery", "Delivery"],
       link: "https://tinyurl.com/YoShhop",
     },
@@ -55,8 +55,7 @@ const Projects = () => {
       category: "Web3 App",
       description:
         "Blockchain-powered event ticketing platform ensuring transparent, tamper-proof, and secure digital ticketing for concerts, festivals, and shows.",
-      image:
-        "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=800&h=600&fit=crop",
+      image: "/src/assets/ticketcity.png",
       tags: ["Web3", "Blockchain", "Ticketing"],
       link: "https://tinyurl.com/42brwuuk",
     },
