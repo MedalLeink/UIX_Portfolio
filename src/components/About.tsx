@@ -32,7 +32,7 @@ const About = () => {
           <div className="relative">
          <div className="w-full h-96 bg-gradient-to-br from-purple-600/20 to-pink-600/20 rounded-2xl backdrop-blur-sm border border-purple-500/30 flex items-center justify-center">
   <div className="relative w-full h-full flex items-center justify-center p-[100px]">
-    <div className="w-1/2 h-full flex items-center justify-center">
+    <div className="w-2/3 h-full flex items-center justify-center">
       <img src="/profile_pic.jpeg" alt="Profile" className="w-full h-full object-cover rounded-full shadow-lg" />
 
     </div>
