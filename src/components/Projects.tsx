@@ -45,7 +45,7 @@ const Projects = () => {
       description:
         "A modern online grocery shopping platform designed for convenience — offering users a seamless way to browse, order, and get essentials delivered straight to their doorsteps.",
       image:
-        "/src/assets/pick'n'get.png",
+        "/YoShop.png",
       tags: ["E-Commerce", "Grocery", "Delivery"],
       link: "https://tinyurl.com/YoShhop",
     },
