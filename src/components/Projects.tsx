@@ -34,7 +34,7 @@ const Projects = () => {
       description:
         "On-Demand Fuel and Car Services at Your Fingertips — a modern mobile solution designed to deliver fuel, car maintenance, and emergency services whenever and wherever you need them.",
       image:
-        "https://images.unsplash.com/photo-1502877338535-766e1452684a?w=800&h=600&fit=crop",
+        "/FLUD.png",
       tags: ["On-Demand", "Mobile", "AutoTech"],
       link: "https://tinyurl.com/5bacvxem", // 👈 external link to the FLUD app
     },
