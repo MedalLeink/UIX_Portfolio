@@ -214,7 +214,7 @@ const Contact = () => {
         {/* Footer */}
         <div className="text-center mt-16 pt-8 border-t border-purple-500/20">
           <p className="text-gray-300">
-            © 2025 Madeleine Nkiru. Designed & Developed with ❤️
+            © 2026 Madeleine Nkiru.
           </p>
         </div>
       </div>
