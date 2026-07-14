@@ -36,6 +36,16 @@ const Projects = () => {
     },
     {
       id: 4,
+      title: "MediChain NG",
+      categories: ["Mobile"], // branding focused
+      description:
+        "A modern online grocery shopping platform designed for convenience — offering users a seamless way to browse, order, and get essentials delivered straight to their doorsteps.",
+      image: "/MediChain_NG.png",
+      tags: ["E-Commerce", "Grocery", "Delivery"],
+      link: "https://tinyurl.com/MediChain-NG",
+    },
+    {
+      id: 5,
       title: "YoShop",
       categories: ["Mobile"], // branding focused
       description:
@@ -45,7 +55,7 @@ const Projects = () => {
       link: "https://tinyurl.com/YoShhop",
     },
     {
-      id: 5,
+      id: 6,
       title: "Ticket City",
       categories: ["Web Design", "Web3"], // web3 + design
       description:
@@ -54,16 +64,16 @@ const Projects = () => {
       tags: ["Web3", "Blockchain", "Ticketing"],
       link: "https://tinyurl.com/42brwuuk",
     },
-    {
-      id: 6,
-      title: "Lemme",
-      categories: ["Web Design"], // web + mobile
-      description:
-        "A stunning clone of Lemmelive.com reimagined as a sleek social web app — designed for seamless creator interaction, live engagement, and authentic community experiences.",
-      image: "/Lemme.png",
-      tags: ["Web", "Social", "Live Interaction"],
-      link: "https://tinyurl.com/lemmeClone",
-    },
+    // {
+    //   id: 7,
+    //   title: "Lemme",
+    //   categories: ["Web Design"], // web + mobile
+    //   description:
+    //     "A stunning clone of Lemmelive.com reimagined as a sleek social web app — designed for seamless creator interaction, live engagement, and authentic community experiences.",
+    //   image: "/Lemme.png",
+    //   tags: ["Web", "Social", "Live Interaction"],
+    //   link: "https://tinyurl.com/lemmeClone",
+    // },
   ];
 
   const categories = ["All", "Web Design", "Mobile", "Branding", "Web3"];
