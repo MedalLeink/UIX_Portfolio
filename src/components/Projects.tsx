@@ -37,7 +37,7 @@ const Projects = () => {
     {
       id: 4,
       title: "MediChain NG",
-      categories: ["Web Design", "Web3"], // branding focused
+      categories: ["Web Design", "Web3"], // web & branding focused
       description:
         "A blockchain-powered drug verification platform designed to combat counterfeit medicines by enabling secure product authentication, supply chain transparency, and role-based dashboards for healthcare stakeholders.",
       image: "/MediChain_NG.png",

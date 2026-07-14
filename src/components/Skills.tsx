@@ -5,8 +5,8 @@ const Skills = () => {
       skills: [
         { name: "Figma", level: 95 },
         // { name: "Adobe Creative Suite", level: 90 },
-        { name: "Sketch", level: 85 },
-        { name: "Framer", level: 80 }
+        { name: "Sketch", level: 75 },
+        { name: "Framer", level: 70 }
       ]
     },
     {
