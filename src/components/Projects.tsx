@@ -37,11 +37,11 @@ const Projects = () => {
     {
       id: 4,
       title: "MediChain NG",
-      categories: ["Mobile"], // branding focused
+      categories: ["Web Design", "Web3"], // branding focused
       description:
-        "A modern online grocery shopping platform designed for convenience — offering users a seamless way to browse, order, and get essentials delivered straight to their doorsteps.",
+        "A blockchain-powered drug verification platform designed to combat counterfeit medicines by enabling secure product authentication, supply chain transparency, and role-based dashboards for healthcare stakeholders.",
       image: "/MediChain_NG.png",
-      tags: ["E-Commerce", "Grocery", "Delivery"],
+      tags: ["HealthTech", "Blockchain", "Dashboard"],
       link: "https://tinyurl.com/MediChain-NG",
     },
     {
